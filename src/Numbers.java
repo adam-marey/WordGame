@@ -20,7 +20,7 @@ public class Numbers {
     }
 
     //ADAM:  boolean logic
-    public boolean compareNumber(int guess) {
+    public static boolean compareNumber(int guess) {
         if (guess == randomNum) {
             System.out.println("Congratulations, you guessed the number!");
             return true;
