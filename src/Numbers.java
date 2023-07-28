@@ -22,15 +22,12 @@ public class Numbers {
     //ADAM:  boolean logic
     public static boolean compareNumber(int guess) {
         if (guess == randomNum) {
-            System.out.println("Congratulations, you guessed the number!");
             return true;
         }
         else if (guess > randomNum) {
-            System.out.println("I'm sorry. That guess was too high.");
             return false;
         }
         else {
-            System.out.println("I'm sorry, That guess was too low.");
             return false;
         }
     }

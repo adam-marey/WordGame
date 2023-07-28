@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
 public class Turn {
+    private static final int correctGuessAmount = 200;
+    private static final int incorrectGuessAmount = 100;
     public boolean takeTurn(Players player, Hosts host) {
-        final int correctGuessAmount = 200;
-        final int incorrectGuessAmount = 100;
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println(host.getFirstName() + " is hosting the game.");
-        System.out.print(player.getFirstName() + ", enter your guess (between 0 and 100): ");
+        System.out.print(player.getFirstName() + " " + player.getLastName() +  "enter your guess (between 0 and 100): ");
         int guess = scanner.nextInt();
 
         // ADAM:  boolean logic - correctGuess

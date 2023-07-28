@@ -1,8 +1,8 @@
 public class Players extends Person {
     private int money;
 
-    public Players(String firstName) {
-        super(firstName);
+    public Players(String firstName, String lastName) {
+        super(firstName, lastName);
         this.money = 1000;
     }
 
