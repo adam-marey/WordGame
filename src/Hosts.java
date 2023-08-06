@@ -5,6 +5,6 @@ public class Hosts extends Person {
 
     public void randomizeNum() {
         Numbers.generateNumber();
-        System.out.println("Generated random number for testing: " + Numbers.getRandomNum());
+//        System.out.println("Generated random number for testing: " + Numbers.getRandomNum());
     }
 }
