@@ -3,23 +3,23 @@ import java.util.Scanner;
 public class GamePlay {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Players[] currentPlayers = new Players[3];
+        for(int i=0; i<3; i++) {
+            System.out.print("Please enter player "+ (i+1) +"'s first name: ");
+            String firstName = scanner.nextLine();
 
-        System.out.print("Please enter your name: ");
-        String firstName = scanner.nextLine();
+            System.out.print("Would you like to enter a last name for player "+ (i+1) +"? (yes/no): ");
 
-        System.out.print("Would you like to enter a last name? (yes/no): ");
+            String response = scanner.nextLine();
 
-        String response = scanner.nextLine();
+            if (response.equalsIgnoreCase("yes")) {
+                System.out.print("Please enter your last name: ");
+                String lastName = scanner.nextLine();
+                currentPlayers[i] = new Players(firstName, lastName);
 
-        Players player;
-
-        if (response.equalsIgnoreCase("yes")) {
-            System.out.print("Please enter your last name: ");
-            String lastName = scanner.nextLine();
-            player = new Players(firstName, lastName);
-
-        } else {
-            player = new Players(firstName, "");
+            } else {
+                currentPlayers[i] = new Players(firstName, "");
+            }
         }
         Hosts host = new Hosts("Adam", "Marey");
         Turn turnHandler = new Turn();
@@ -29,9 +29,11 @@ public class GamePlay {
         boolean keepPlaying = true;
         while (keepPlaying) {
             host.randomizeNum();
-            boolean correctGuess = false;
-            while (!correctGuess) {
-                correctGuess = turnHandler.takeTurn(player, host);
+            for(Players player : currentPlayers) {
+                boolean correctGuess = false;
+                while (!correctGuess) {
+                    correctGuess = turnHandler.takeTurn(player, host);
+                }
             }
             System.out.print("Do you want to keep playing? (yes/no): ");
             String continueResponse = scanner.next();
