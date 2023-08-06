@@ -5,10 +5,10 @@ public class Money implements Award {
     @Override
     public int displayWinnings(Players player, boolean won) {
         if (won) {
-            System.out.println(player.getFirstName() + ", you won!");
+            System.out.println(player.getFirstName() + ", you won!" + correctGuessAmount);
             return correctGuessAmount;
         } else {
-            System.out.println(player.getFirstName() + ", you lost!");
+            System.out.println(player.getFirstName() + ", you lost!" + incorrectGuessAmount);
             return -incorrectGuessAmount;
         }
     }

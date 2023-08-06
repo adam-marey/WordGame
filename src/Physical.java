@@ -9,12 +9,12 @@ public class Physical implements Award {
     }
 
     @Override
-    public int displayWinnings(Players player, boolean won) {
-        String prize = prizes[getRandomPrizeIndex()];
-        if (won) {
-            System.out.println(player.getFirstName() + ", you won a " + prize + "!");
+    public int displayWinnings(Players player, boolean isCorrectGuess) {
+        int prizeIndex = getRandomPrizeIndex();
+        if (isCorrectGuess) {
+            System.out.println(player.getFirstName() + ", Congratulations! You won a " + prizes[prizeIndex]);
         } else {
-            System.out.println(player.getFirstName() + ", you lost! You could have won a " + prize);
+            System.out.println(player.getFirstName() + ", Sorry! You could have won a " + prizes[prizeIndex]);
         }
         return 0;
     }

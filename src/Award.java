@@ -1,3 +1,3 @@
 public interface Award {
-    int displayWinnings(Players player, boolean won);
+    int displayWinnings(Players player, boolean isCorrectGuess);
 }

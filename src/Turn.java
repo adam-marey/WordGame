@@ -1,25 +1,27 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Turn {
-    private static final int correctGuessAmount = 200;
-    private static final int incorrectGuessAmount = 100;
     public boolean takeTurn(Players player, Hosts host) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print(player.getFirstName() + " " + player.getLastName() +  "enter your guess (between 0 and 100): ");
+        System.out.print(player.getFirstName() + " " + player.getLastName() +  " enter your guess (between 0 and 100): ");
         int guess = scanner.nextInt();
-
-        // ADAM:  boolean logic - correctGuess
         boolean correctGuess = Numbers.compareNumber(guess);
-        if (correctGuess) {
-            player.setMoney(player.getMoney() + correctGuessAmount);
-            System.out.println("Congratulations, you guessed the number!");
-            System.out.println(player);
+
+        Random random = new Random();
+        int prizeType = random.nextInt(2);
+
+        Award award;
+        if (prizeType == 0) {
+            award = new Money();
         } else {
-            player.setMoney(player.getMoney() - incorrectGuessAmount);
-            System.out.println("I'm sorry. That guess was " + (guess > Numbers.getRandomNum() ? "too high." : "too low."));
-            System.out.println(player);
+            award = new Physical();
         }
+
+        int prize = award.displayWinnings(player, correctGuess);
+        player.setMoney(player.getMoney() + prize);
+        System.out.println(player);
         return correctGuess;
     }
 }
