@@ -32,7 +32,7 @@ public class GamePlay {
 
         boolean keepPlaying = true;
         while (keepPlaying) {
-            host.randomizeNum();
+            host.setGamePhrase();
 
             for (Players player : game.currentPlayers) {
                 boolean correctGuess = false;

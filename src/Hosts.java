@@ -6,7 +6,7 @@ public class Hosts extends Person {
     }
 
     //adam:  replaced with randomizeNum() method
-    public void setNewGamePhrase() {
+    public void setGamePhrase() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Please enter a phrase for players to guess: ");
         String phrase = scanner.nextLine();
