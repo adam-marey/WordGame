@@ -4,7 +4,7 @@ public class Phrases {
     private static String gamePhrase;
     private static String playingPhrase;
     private final static String[] prizePool = {
-            "$100", "$200", "$300", "Special Gift", "Bonus Points"
+            "$100", "$200", "$300", "Box Gift", "trip to the moon"
     };
     public static void setGamePhrase(String phrase) {
         gamePhrase = phrase;
@@ -14,9 +14,12 @@ public class Phrases {
         return playingPhrase;
     }
 
-    public static void findLetters(String letter) throws MultipleLettersException {
+    public static boolean findLetters(String letter) throws MultipleLettersException {
         if (letter.length() > 1) {
             throw new MultipleLettersException();
+        }
+        if (!gamePhrase.contains(letter)) {
+            return false; //adam:  added this line to return false if the letter is not in the phrase
         }
         StringBuilder updatedPhrase = new StringBuilder(playingPhrase);
 
@@ -33,6 +36,7 @@ public class Phrases {
             System.out.println("Congratulations! You've guessed the phrase!");
             awardPrize();
         }
+        return true;
     }
 
     //adam:  Method to award a prize --> extra

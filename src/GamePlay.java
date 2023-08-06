@@ -39,6 +39,7 @@ public class GamePlay {
                 while (!correctGuess) {
                     correctGuess = turnHandler.takeTurn(player, host);
                 }
+                host.setGamePhrase(); // adam:  added this line to reset the phrase after each player's turn
             }
 
             System.out.print("Do you want to keep playing? (yes/no): ");
