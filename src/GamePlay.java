@@ -13,7 +13,7 @@ public class GamePlay {
         frame = new JFrame("Word Guessing Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        playerInputPanel = new JPanel(new GridLayout(MAX_PLAYERS + 1, 2));
+        playerInputPanel = new JPanel(new GridLayout(MAX_PLAYERS, 2));
 
         currentPlayers = new Players[MAX_PLAYERS];
         turnHandler = new Turn();
