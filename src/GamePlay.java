@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.Scanner;
 
 public class GamePlay {
     private final JFrame frame;
