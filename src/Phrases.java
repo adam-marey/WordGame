@@ -1,5 +1,5 @@
 import java.util.Random;
-
+import javax.swing.JOptionPane;
 public class Phrases {
     private static String gamePhrase;
     private static String playingPhrase;
@@ -33,16 +33,20 @@ public class Phrases {
 
         //adam: Check if the player has won
         if (!playingPhrase.contains("_")) {
-            System.out.println("Congratulations! You've guessed the phrase!");
+            showWinningMessage();
             awardPrize();
         }
         return true;
     }
+    private static void showWinningMessage() {
+        JOptionPane.showMessageDialog(null, "Congratulations! You've guessed the phrase!");
+    }
+
 
     //adam:  Method to award a prize --> extra
     private static void awardPrize() {
         Random random = new Random();
         int prizeIndex = random.nextInt(prizePool.length);
-        System.out.println("You have won: " + prizePool[prizeIndex]);
+        JOptionPane.showMessageDialog(null, "You have won: " + prizePool[prizeIndex]);
     }
 }

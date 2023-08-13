@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import javax.swing.*;
 
 public class Hosts extends Person {
     public Hosts(String firstName, String lastName) {
@@ -6,10 +6,8 @@ public class Hosts extends Person {
     }
 
     //adam:  replaced with randomizeNum() method
-    public void setGamePhrase() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Please enter a phrase for players to guess: ");
-        String phrase = scanner.nextLine();
+    public void setGamePhrase(JFrame frame) {
+        String phrase = JOptionPane.showInputDialog(frame, "Please enter a phrase for players to guess:");
         Phrases.setGamePhrase(phrase);
     }
 }
