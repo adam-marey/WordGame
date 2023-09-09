@@ -62,6 +62,8 @@ public class GameGUI {
         mainFrame.setVisible(true);
     }
     // adam: need to refactor this method to use the new Hosts class....
+    // adam: also need to refactor the createPlayer() method to use the new Players class
+    //adam: overwealmed with the amount of work that needs to be done here.  I'm going to try to get the game working first, then come back to this.
     private void createPlayer() {
         String firstName = JOptionPane.showInputDialog("Enter player's first name:");
         String lastName = JOptionPane.showInputDialog("Enter player's last name:");
