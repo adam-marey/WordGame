@@ -14,7 +14,7 @@ public class GUI {
             startButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    new GamePlay();
+                    new GameGUI();
                     frame.dispose();
                 }
             });
