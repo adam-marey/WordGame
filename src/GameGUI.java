@@ -61,7 +61,7 @@ public class GameGUI {
 
         mainFrame.setVisible(true);
     }
-
+    // adam: need to refactor this method to use the new Hosts class....
     private void createPlayer() {
         String firstName = JOptionPane.showInputDialog("Enter player's first name:");
         String lastName = JOptionPane.showInputDialog("Enter player's last name:");
